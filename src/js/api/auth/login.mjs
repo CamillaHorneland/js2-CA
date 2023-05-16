@@ -22,5 +22,7 @@ export async function login(profile) {
 
   storage.save("profile", user);
 
+  // console.log("profile", user);
+
   alert("You are logged in");
 }
