@@ -10,6 +10,12 @@ export default function router() {
     case '/profile/register/':
       listeners.setRegisterFormListener()
       return;
+     case '/post/create/':
+      listeners.setCreatePostFormListener()
+      return;
+    case '/post/edit/':
+      listeners.setUpdatePostListener()
+      return;
     case '/profile/edit/':
       listeners.setUpdateProfileListener()
       return;
