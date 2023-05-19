@@ -2,7 +2,6 @@
   "name": "js2-ca",
   "version": "1.0.0",
   "description": "Course assignment",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass src/scss:dist/css",
