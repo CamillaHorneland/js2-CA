@@ -12,7 +12,7 @@
     <script src="/src/js/index.mjs" defer type="module"></script>
 </head>
 <body>
-    <header>
+    <header data-bs-theme="red">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <div class="m-5"><img src="/images/noroff_logo.jpg" alt="logo Noroff"></div>
@@ -43,12 +43,7 @@
         
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <div id="message"></div>
-                <div id="loginButton" class="text-center m-5">
-                        <a href="/profile/login" class="btn btn-danger m-4 w-50">Login</a>
-                </div>
                 <form id="registerForm">
-                    <fieldset>
                     <div class="form-group m-4">
                         <label for="">Name</label>
                         <input class="form-control bg-light" type="text" name="name" required pattern="^[\w]+$"
@@ -80,7 +75,6 @@
                     <div class="d-flex justify-content-center m-5">
                         <button class="btn btn-dark text-center m-5">Register</button>
                     </div>
-                    </fieldset>
                 </form>
             </div>
         </div>
