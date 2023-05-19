@@ -7,7 +7,7 @@
     <meta name="description" content="Noroff-sosial - a social media application for students of Noroff. Edit profile">
     <title>Noroff-sosial|Edit profile</title>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="/dist/css/index.css" type="text/css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/src/js/index.mjs" defer type="module"></script>
 </head>
@@ -52,15 +52,15 @@
         <h1 class="text-center m-5">Edit profile.</h1>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form id="profileForm">
+                <form id="editProfile">
                     <div class="form-group m-4">
                         <label for="">Name</label>
-                        <input class="form-control bg-light" type="text" disable name="name">
+                        <input class="form-control bg-dark text-white" type="text" disable name="name">
                     </div>
 
                     <div class="form-group m-4">
                         <label for="">Email</label>
-                        <input class="form-control bg-light" type="email" name="email">
+                        <input class="form-control bg-dark text-white" type="email" disable name="email">
                     </div>
 
                     <div class="form-group m-4">
@@ -79,26 +79,6 @@
                 </form>
               </div>
             </div>
-        <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
-                    <!-- <form id="loginForm">
-                    <div class="form-group m-4">
-                        <label for="">Email</label>
-                        <input class="form-control bg-light" type="email" name="email" required
-                            pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                            title="The email must be a valid stud.noroff.no or noroff.no email address.">
-                    </div>
-
-                    <div class="form-group m-4">
-                        <label for="">Password</label>
-                        <input class="form-control bg-light" type="password" name="password" required minlength="8"
-                            title="The password value must be at least 8 characters.">
-                    </div>
-
-                    <div class="d-flex justify-content-center m-5">
-                        <button class="btn btn-dark text-center m-5">Login</button>
-                    </div>
-                </form> -->
     </main>
     <footer>
         <div class="bg-danger fixed-bottom py-3">

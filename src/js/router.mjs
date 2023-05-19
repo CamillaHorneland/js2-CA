@@ -10,5 +10,8 @@ export default function router() {
     case '/profile/register/':
       listeners.setRegisterFormListener()
       return;
+    case '/profile/edit/':
+      listeners.setUpdateProfileListener()
+      return;
   }
 }
