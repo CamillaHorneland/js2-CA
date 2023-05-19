@@ -15,9 +15,14 @@ export async function register(profile) {
     body
   })
   
-  console.log("profile", profile);
+  const json = await response.json();
 
-  const result = await response.json()
-  alert("You are registered")
-  return result
+  if(response.ok) {
+    return json;
+  }
+
+  console.log(json)
+
+  throw new Error(json.errors[0].message);
+
 }
