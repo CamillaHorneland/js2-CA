@@ -7,7 +7,7 @@
     <meta name="description" content="Noroff-sosial - a social media application for students of Noroff. Edit profile">
     <title>Noroff-sosial|Edit post</title>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="/src/js/index.mjs" defer type="module"></script>
 </head>
@@ -48,34 +48,34 @@
         </nav>
     </header>
     <main>
-        <h1 class="text-center m-5">Edit profile.</h1>
+        <h1 class="text-center m-5">Edit Post.</h1>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form id="profileForm">
-                    <div class="form-group m-4">
-                        <label for="">Name</label>
-                        <input class="form-control bg-light" type="text" disable name="name">
-                    </div>
-
-                    <div class="form-group m-4">
-                        <label for="">Email</label>
-                        <input class="form-control bg-light" type="email" name="email">
-                    </div>
-
-                    <div class="form-group m-4">
-                        <label for="">Banner</label>
-                        <input class="form-control bg-light" type="url" name="banner">
-                    </div>
-
-                    <div class="form-group m-4">
-                        <label for="">Avatar</label>
-                        <input class="form-control bg-light" type="url" name="avatar">
-                    </div>
-
-                    <div class="d-flex justify-content-center m-5">
-                        <button class="btn btn-dark text-center m-5">Update profile</button>
-                    </div>
-                </form>
+                    <form id="editPost">
+                        <div class="form-group m-4">
+                            <label for="">Title</label>
+                            <input class="form-control bg-light" type="text" name="title" required>
+                        </div>
+                    
+                        <div class="form-group m-4">
+                            <label for="">Body</label>
+                            <textarea class="form-control bg-light" name="body" required></textarea>
+                        </div>
+                    
+                        <div class="form-group m-4">
+                            <label for="">Tags</label>
+                            <input class="form-control bg-light" type="text" name="tags">
+                        </div>
+                    
+                        <div class="form-group m-4">
+                            <label for="">Media</label>
+                            <input class="form-control bg-light" type="url" name="media">
+                        </div>
+                    
+                        <div class="d-flex justify-content-center m-5">
+                            <button class="btn btn-dark text-center m-5">Edit Post</button>
+                        </div>
+                    </form>
             </div>
         </div>
     </main>
