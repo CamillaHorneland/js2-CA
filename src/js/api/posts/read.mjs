@@ -32,7 +32,7 @@ export async function searchMyposts(tag) {
   }
 }
 
-//   const username = getName();
-//   const endpoint = `/profiles/${username}`;
-//   const url = `${API_SOCIAL_URL}${endpoint}/${action}?_author=tru&_comments=true&_reactions=true&_tag=${tag}`;
-//   const response = await authFetch(url);
+  // const username = getName();
+  // const endpoint = `/profiles/${username}`;
+  // const url = `${API_SOCIAL_URL}${endpoint}/${action}?_author=tru&_comments=true&_reactions=true&_tag=${tag}`;
+  // const response = await authFetch(url);

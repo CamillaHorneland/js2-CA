@@ -4,7 +4,6 @@ export function postTemplate(postData) {
 
   const title = document.createElement("h2");
   title.innerText = postData.title;
-  title.classList.add("title-margin");
   post.appendChild(title);
 
   const body = document.createElement("p");
