@@ -29,7 +29,17 @@ export function setLoginFormListener() {
       } finally {
         button.innerText = "Login";
         fieldset.disabled = false;
-      }
+   }
+    });
+  }
+}
+
+export function setLogoutButtonListener() {
+  const logoutButton = document.querySelector("#logoutButton");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      storage.clear(); // Fjern alle lagrede data fra localStorage
+      location.href = "/index.html";
     });
   }
 }

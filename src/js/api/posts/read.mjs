@@ -1,12 +1,28 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
+import * as storage from "../../storage/index.mjs";
 
 const action = "/posts";
 
 export async function getPosts() {
   const updatePostURL = `${API_SOCIAL_URL}${action}`;
+
   const response = await authFetch(updatePostURL);
-  
+  console.log("Fetching posts");
+  const json = await response.json();
+
+  if (response.ok) {
+    return json;
+  }
+
+  throw new Error(json.errors[0].message);
+}
+
+export async function getProfilePosts() {
+  const username = storage.load('profile').name;
+  const updatePostURL = `${API_SOCIAL_URL}/profiles/${username}${action}`;
+  const response = await authFetch(updatePostURL);
+  console.log("Fetching profile posts");
   const json = await response.json();
 
   if (response.ok) {

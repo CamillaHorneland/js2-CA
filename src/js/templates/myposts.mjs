@@ -1,4 +1,4 @@
-export function postTemplate(postData) {
+export function myPostTemplate(postData) {
   const post = document.createElement("div");
   post.classList.add("post");
 
@@ -14,7 +14,7 @@ export function postTemplate(postData) {
     const image = document.createElement("img");
     image.src = postData.media;
     image.alt = `Image from ${postData.title}`;
-    image.style.maxWidth = "100%";
+    image.style.maxWidth = "100%"; // Begrenser maksimal bredden til 100% av forelderens bredde
     image.style.width = "100%";
     post.appendChild(image);
   }
@@ -43,13 +43,29 @@ export function postTemplate(postData) {
   reactions.innerText = `Reactions: ${postData._count.reactions}`;
   post.appendChild(reactions);
 
+  const editBtn = document.createElement('a');
+  editBtn.className = 'btn btn-warning';
+  editBtn.innerText = 'Edit';
+  editBtn.href = `/post/edit?id=${postData.id}`;
+  
+  post.appendChild(editBtn);
+
+  const delBtn = document.createElement('a');
+  delBtn.className = 'btn btn-danger';
+  delBtn.innerText = 'Delete';
+  delBtn.href = `/post/delete?id=${postData.id}`;
+  
+  post.appendChild(delBtn);
+
+
+
   return post;
 }
 
-export function renderPostTemplates(postDataList, parent) {
+export function renderMyPostTemplates(postDataList, parent) {
   
   if(postDataList.length > 0) {
-    parent.append(...postDataList.map(postTemplate));
+    parent.append(...postDataList.map(myPostTemplate));
   } else {
     const emptyResult = document.createElement('h2');
     emptyResult.innerText = 'No posts to display';

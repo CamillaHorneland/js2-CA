@@ -1,11 +1,14 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
+import * as storage from "../../storage/index.mjs";
 
 const action = "/profiles/<name>/posts";
 
 export async function getMyPosts() {
-  const username = getName();
-  const updatePostURL = `${API_SOCIAL_URL}/profiles/${username}${action}`;
+  //const username = getName();
+  const username = storage.load('profile').name;
+  const updatePostURL = `${API_SOCIAL_URL}${action}`.replace('<name>', username);
+  //const updatePostURL = `${API_SOCIAL_URL}${action}`;
   
   const response = await authFetch(updatePostURL);
   

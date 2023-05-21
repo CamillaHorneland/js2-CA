@@ -1,4 +1,4 @@
-import { getPosts } from "../../api/index.mjs";
+import { getPosts, getProfilePosts } from "../../api/index.mjs";
 
 import { renderPostTemplates } from "../../templates/posts.mjs";
 import displayMessage from "../../ui/common/displayMessage.mjs";
@@ -7,8 +7,9 @@ export async function displayPostsListener() {
     window.addEventListener("DOMContentLoaded", async function () {
         try {
         console.log("displayPostsListener");
-      
-        const posts = await getPosts(); 
+        
+        const post = await getProfilePosts();
+        //const posts = await getPosts(); 
         
         const postsContainer = document.getElementById("posts"); 
         

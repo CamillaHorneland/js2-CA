@@ -8,8 +8,8 @@
         content="Noroff-sosial - a social media application for students of Noroff. Page for creating post">
     <title>Noroff-sosial|Create post</title>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/dist/css/index.css" />
     <script src="/src/js/index.mjs" defer type="module"></script>
 </head>
 <body>
@@ -23,12 +23,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile/index.html">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/posts">See posts</a>
-                        </li>
+                            <a class="nav-link" href="/post/">My Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/post/">See all Posts</a>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="">Create post</a>
                         </li>
@@ -36,7 +35,7 @@
                             <a class="nav-link" href="https://www.noroff.no/">Go to noroff.no</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/index.html">Logout</a>
+                            <button id="logoutButton" class="m-3">Logg ut</button>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -59,7 +58,7 @@
                         
                         <div class="form-group m-4">
                             <label for="">Body</label>
-                            <textarea class="form-control bg-light" name="body" required></textarea>
+                            <textarea class="form-control bg-light" name="body"></textarea>
                         </div>
                         
                         <div class="form-group m-4">
