@@ -1,11 +1,11 @@
-import { register } from "../../api/auth/register.mjs";
+import { register } from "../../api/auth/register";
 import displayMessage from "../../ui/common/displayMessage.mjs";
 
 export function setRegisterFormListener() {
   const form = document.querySelector("#registerForm");
   const loginButtonContainer = document.querySelector("#loginButton");
 
-  if (form && loginButtonContainer) {
+  if (form) {
     loginButtonContainer.style.display = "none";
 
     form.addEventListener("submit", async (event) => {
@@ -22,18 +22,7 @@ export function setRegisterFormListener() {
 
       try {
         await register(profile);
-        displayMessage("success", "Registration successful!", "#message");
-
-        const loginButton = document.createElement("button");
-        loginButton.innerText = "Go to Login";
-        loginButton.classList.add("btn", "btn-danger", "text-center", "m-5");
-        loginButton.addEventListener("click", () => {
-          window.location.href = "/profile/login";
-        });
-
-        loginButtonContainer.innerHTML = ""; 
-        loginButtonContainer.appendChild(loginButton);
-
+        displayMessage("success", "Registration successful! You can now login", "#message");
         loginButtonContainer.style.display = "block";
       } catch (error) {
         displayMessage("danger", error, "#message");
