@@ -1,4 +1,4 @@
-import { register } from "../../api/auth/register";
+import { register } from "../../api/auth/register.mjs";
 import displayMessage from "../../ui/common/displayMessage.mjs";
 
 export function setRegisterFormListener() {

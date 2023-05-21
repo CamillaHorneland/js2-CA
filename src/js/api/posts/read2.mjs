@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
-const action = "/posts";
+const action = "/profiles/<name>/posts";
 
 export async function getMyPosts() {
   const updatePostURL = `${API_SOCIAL_URL}${action}`;

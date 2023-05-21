@@ -4,6 +4,7 @@ export function postTemplate(postData) {
 
   const title = document.createElement("h2");
   title.innerText = postData.title;
+  title.classList.add("title-margin");
   post.appendChild(title);
 
   const body = document.createElement("p");
@@ -14,6 +15,8 @@ export function postTemplate(postData) {
     const image = document.createElement("img");
     image.src = postData.media;
     image.alt = `Image from ${postData.title}`;
+    image.style.maxWidth = "100%"; // Begrenser maksimal bredden til 100% av forelderens bredde
+    image.style.width = "100%";
     post.appendChild(image);
   }
 
