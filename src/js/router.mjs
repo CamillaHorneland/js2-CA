@@ -1,4 +1,4 @@
-import * as listeners from "./handlers/index.mjs";
+import * as listeners from "./listeners/index.mjs";
 
 export default function router() {
   const path = location.pathname;
@@ -10,14 +10,17 @@ export default function router() {
     case '/profile/register/':
       listeners.setRegisterFormListener()
       return;
-     case '/post/create/':
+    case '/posts/':
+      listeners.displayPostsListener()
+      return;
+    case '/post/':
+      listeners.displayMyPostsListener()
+      return;  
+    case '/post/create/':
       listeners.setCreatePostFormListener()
       return;
     case '/post/edit/':
       listeners.setUpdatePostListener()
-      return;
-    case '/profile/edit/':
-      listeners.setUpdateProfileListener()
       return;
   }
 }
