@@ -24,6 +24,7 @@ export function setRegisterFormListener() {
         await register(profile);
         displayMessage("success", "Registration successful! You can now login", "#message");
         loginButtonContainer.style.display = "block";
+        form.reset();
       } catch (error) {
         displayMessage("danger", error, "#message");
         console.log(error);

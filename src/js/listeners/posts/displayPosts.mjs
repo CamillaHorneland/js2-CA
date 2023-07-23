@@ -8,7 +8,7 @@ export async function displayPostsListener() {
         try {
         console.log("displayPostsListener");
         
-        const post = await getProfilePosts();
+        // const post = await getProfilePosts();
         //const posts = await getPosts(); 
         
         const postsContainer = document.getElementById("posts"); 
