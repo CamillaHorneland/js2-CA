@@ -39,7 +39,15 @@ export async function getPost(id) {
   }
   
   const getPostURL = `${API_SOCIAL_URL}${action}/${id}`;
+  const response = await authFetch(getPostURL);
+  console.log("Fetching post");
+  const json = await response.json();
 
+  if (response.ok) {
+    return json;
+  }
+
+  throw new Error(json.errors[0].message);
 }
 
 export async function searchMyposts(tag) {

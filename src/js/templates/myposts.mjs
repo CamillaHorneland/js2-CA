@@ -14,7 +14,7 @@ export function myPostTemplate(postData) {
     const image = document.createElement("img");
     image.src = postData.media;
     image.alt = `Image from ${postData.title}`;
-    image.style.maxWidth = "100%"; // Begrenser maksimal bredden til 100% av forelderens bredde
+    image.style.maxWidth = "100%"; 
     image.style.width = "100%";
     post.appendChild(image);
   }
@@ -44,16 +44,17 @@ export function myPostTemplate(postData) {
   post.appendChild(reactions);
 
   const editBtn = document.createElement('a');
-  editBtn.className = 'btn btn-warning';
+  editBtn.className = 'btn btn-warning m-2 mb-5';
   editBtn.innerText = 'Edit';
-  editBtn.href = `/post/edit?id=${postData.id}`;
+  //editBtn.href = `/user-post/edit/${postData.id}`;
+  editBtn.href = `/user-post/edit/?id=${postData.id}`;
   
   post.appendChild(editBtn);
 
   const delBtn = document.createElement('a');
-  delBtn.className = 'btn btn-danger';
+  delBtn.className = 'btn btn-danger m-2 mb-5 delete-post';
   delBtn.innerText = 'Delete';
-  delBtn.href = `/post/delete?id=${postData.id}`;
+  delBtn.dataset.id = `${postData.id}`;
   
   post.appendChild(delBtn);
 

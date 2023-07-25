@@ -11,14 +11,14 @@ export async function updatePost(postData) {
   }
 
   const updatePostURL = `${API_SOCIAL_URL}${action}/${postData.id}`;
-  
+  postData.tags = postData.tags.split(',');
   const response = await authFetch(updatePostURL, {
     method,
     body: JSON.stringify(postData)
   });
   
   const json = await response.json();
-
+  console.log(json);
   if(response.ok) {
     return json;
   }

@@ -4,5 +4,6 @@ export * from "./posts/displayPosts.mjs";
 export * from "./posts/createPost.mjs";
 export * from "./posts/updatePost.mjs";
 export * from "./posts/displayMyPosts.mjs"; 
+export * from "./auth/logout.mjs";
 
 

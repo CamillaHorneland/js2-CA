@@ -1,10 +1,13 @@
 import { getPost, updatePost } from "../../api/index.mjs";
 
 export async function setUpdatePostListener() {
+  console.log(location);
   const form = document.querySelector("#editPost");
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
+  const postData = await getPost(id);
+  console.log(postData);
 
   if (form) {
     const button = form.querySelector("button");
@@ -19,15 +22,28 @@ export async function setUpdatePostListener() {
 
     button.disabled = false;
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault()
       const form = event.target;
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries())
+      console.log(post);
       post.id = id;
+
+          try {
+        await updatePost(post);
+
+        window.location.href = "/user-post";
+      } catch (error) {
+        console.log("Error updating post:", error.message);
+      } 
       
       // Send to API
       updatePost(post)
     })
   }
 }
+
+  
+  
+  

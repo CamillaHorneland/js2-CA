@@ -1,8 +1,15 @@
 import * as listeners from "./listeners/index.mjs";
+// import { setLogoutButtonListener } from "./auth/logout.mjs";
 
 export default function router() {
   const path = location.pathname;
+  var postId = parseInt(path.split('/').reverse()[0]);
+  if(!isNaN(postId))
+    postId = '';
+  
+  console.log(postId);
 
+  listeners.setLogoutButtonListener();
   switch (path) {
     case '/profile/login/':
       listeners.setLoginFormListener()
@@ -13,13 +20,17 @@ export default function router() {
     case '/posts/':
       listeners.displayPostsListener()
       return;
-    case '/post/':
+    case '/user-post/':
       listeners.displayMyPostsListener()
       return;  
-    case '/post/create/':
+    /*case '/user-post/edit/'+postId:
+    case '/user-post/edit':
+      listeners.setUpdatePostListener()
+      return;*/
+    case '/user-post/create/':
       listeners.setCreatePostFormListener()
       return;
-    case '/post/edit/':
+    case '/user-post/edit/':
       listeners.setUpdatePostListener()
       return;
   }
