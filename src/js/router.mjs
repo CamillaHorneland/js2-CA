@@ -23,10 +23,6 @@ export default function router() {
     case '/user-post/':
       listeners.displayMyPostsListener()
       return;  
-    /*case '/user-post/edit/'+postId:
-    case '/user-post/edit':
-      listeners.setUpdatePostListener()
-      return;*/
     case '/user-post/create/':
       listeners.setCreatePostFormListener()
       return;

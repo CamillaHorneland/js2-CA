@@ -46,7 +46,6 @@ export function myPostTemplate(postData) {
   const editBtn = document.createElement('a');
   editBtn.className = 'btn btn-warning m-2 mb-5';
   editBtn.innerText = 'Edit';
-  //editBtn.href = `/user-post/edit/${postData.id}`;
   editBtn.href = `/user-post/edit/?id=${postData.id}`;
   
   post.appendChild(editBtn);
@@ -57,8 +56,6 @@ export function myPostTemplate(postData) {
   delBtn.dataset.id = `${postData.id}`;
   
   post.appendChild(delBtn);
-
-
 
   return post;
 }

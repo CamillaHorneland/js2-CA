@@ -38,7 +38,6 @@ export async function setUpdatePostListener() {
         console.log("Error updating post:", error.message);
       } 
       
-      // Send to API
       updatePost(post)
     })
   }

@@ -18,12 +18,12 @@ export async function updatePost(postData) {
   });
   
   const json = await response.json();
-  console.log(json);
+  // console.log(json);
   if(response.ok) {
     return json;
   }
 
-  console.log(json)
+  // console.log(json)
 
   throw new Error(json.errors[0].message);
 

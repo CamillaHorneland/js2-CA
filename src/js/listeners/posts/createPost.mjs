@@ -12,10 +12,9 @@ export function setCreatePostFormListener() {
 
   
       try {
-        // Send to API
+        
         await createPost(post);
 
-        // Redirect to user-post page
         window.location.href = "/user-post";
       } catch (error) {
         console.log("Error creating post:", error.message);
